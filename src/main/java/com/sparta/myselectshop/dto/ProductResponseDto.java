@@ -11,7 +11,6 @@ import java.util.List;
 @Getter
 @NoArgsConstructor
 public class ProductResponseDto {
-
     private Long id;
     private String title;
     private String link;
@@ -19,7 +18,7 @@ public class ProductResponseDto {
     private int lprice;
     private int myprice;
 
-    private List<FolderResponseDto> productFolderList = new ArrayList<>();
+    private List<FolderResponseDto> productFolders = new ArrayList<>();
 
     public ProductResponseDto(Product product) {
         this.id = product.getId();
@@ -28,8 +27,9 @@ public class ProductResponseDto {
         this.image = product.getImage();
         this.lprice = product.getLprice();
         this.myprice = product.getMyprice();
-        for (ProductFolder productFolder : product.getProductFolderList()) {
-            productFolderList.add(new FolderResponseDto(productFolder.getFolder()));
+
+        for (ProductFolder productFolder : product.getProductFolders()) {
+            productFolders.add(new FolderResponseDto(productFolder.getFolder()));
         }
     }
 }
