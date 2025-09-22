@@ -32,9 +32,4 @@ public class ProductController {
         return productService.getProducts();
     }
 
-    @GetMapping("/admin/product")
-    public List<ProductResponseDto> getAllProducts() {
-        return productService.getAllProducts();
-    }
-
 }
